@@ -21,11 +21,11 @@ async function handleFormSubmission(e) {
     };
     console.log(detailedError);
   } else {
-    console.log(result);
     const conversion = document.createElement("p");
     conversion.append(amt + " " + cur1Name + " is equal to " + result.conversion_result + " " + cur2Name + ".");
-    const body = document.querySelector("body");
-    body.append(conversion);
+    const results = document.getElementById("results");
+    results.innerHTML = "";
+    results.append(conversion);
   }
 }
 
