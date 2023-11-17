@@ -19,7 +19,11 @@ async function handleFormSubmission(e) {
       message: 'There was an error in your API request',
       errorType: error.message,
     };
-    console.log(detailedError);
+    const errorDisplay = document.createElement("p");
+    errorDisplay.append(detailedError.message + ". " + detailedError.errorType + ".");
+    const results = document.getElementById("results");
+    results.innerHTML = "";
+    results.append(errorDisplay);
   } else {
     const conversion = document.createElement("p");
     conversion.append(amt + " " + cur1Name + " is equal to " + result.conversion_result + " " + cur2Name + ".");
