@@ -4,8 +4,14 @@
 <head>
   <title>Currency Exchanger</title>
 </head>
+<h2>
+  Convert:
+</h2>
 <form id="converter">
-  <label for="cur1">Currency 1:</label>
+  <label for="amount">Input Amount:</label>
+  <input id="amount" type="number" name="amount" value="1"><br>
+  <br>
+  <label for="cur1">Input Currency:</label>
   <select id="cur1" name="cur1">
     <option value="usd">US Dollar</option>
     <option value="eur">Euro</option>
@@ -50,7 +56,10 @@
     <option value="xxx">Wizard Galleon</option>
   </select><br>
   <br>
-  <label for="cur2">Currency 2:</label>
+  <h2>
+    To:
+  </h2>
+  <label for="cur2">Output Currency:</label>
   <select id="cur2" name="cur2">
     <option value="eur">Euro</option>
     <option value="usd">US Dollar</option>
@@ -94,9 +103,6 @@
     <option value="vnd">Vietnamese Dong</option>
     <option value="xxx">Wizard Galleon</option>
   </select><br>
-  <br>
-  <label for="amount">Amount:</label>
-  <input id="amount" type="number" name="amount" value="1"><br>
   <br>
   <button class="button" type="submit" value="submit">Submit</button>
 </form>
