@@ -1,7 +1,7 @@
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
-import { convert } from "./js/function";
+import { API } from "./js/function";
 
 
 async function handleFormSubmission(e) {
@@ -9,8 +9,16 @@ async function handleFormSubmission(e) {
   const cur1 = document.getElementById("cur1").value;
   const cur2 = document.getElementById("cur2").value;
   const amt = document.getElementById("amount").value;
-  const conversion = await convert(cur1, cur2, amt);
-  console.log(conversion);
+  const { result, error } = await API.convert(cur1, cur2, amt);
+  if (error) {
+    const detailedError = {
+      message: 'There was an error in your API request',
+      errorType: error.message,
+    };
+    console.log(detailedError);
+  } else {
+    console.log(result);
+  }
 }
 
 
