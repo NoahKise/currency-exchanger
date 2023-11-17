@@ -1,7 +1,7 @@
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
-import { API } from "./js/function";
+import { API } from "./js/API";
 
 
 async function handleFormSubmission(e) {
