@@ -45,3 +45,21 @@ h2 {
   font-family: money;
   src: url(../assets/fonts/DollarBill-5EwZ.ttf);
 }
+
+select {
+  background-color: rgb(185, 255, 247);
+}
+
+input {
+  background-color: rgb(185, 255, 247);
+}
+
+button {
+  background-color: rgb(185, 255, 247);
+  width: 130px;
+  height: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: money;
+}

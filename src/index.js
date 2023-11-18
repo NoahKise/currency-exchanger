@@ -27,7 +27,7 @@ async function handleFormSubmission(e) {
     results.append(errorDisplay);
   } else {
     const conversion = document.createElement("p");
-    conversion.innerHTML = `<strong>${amt}</strong> ${cur1Name} is equal to <strong>${result.conversion_result}</strong> ${cur2Name}.`;
+    conversion.innerHTML = `<strong>${amt}</strong> <em>${cur1Name}</em> is equal to <strong>${result.conversion_result}</strong> <em>${cur2Name}</em>.`;
     const results = document.getElementById("results");
     results.innerHTML = "";
     results.removeAttribute("class");
