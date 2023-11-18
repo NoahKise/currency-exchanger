@@ -34,7 +34,7 @@ async function handleFormSubmission(e) {
     results.append(conversion);
   } else {
     const empty = document.createElement("p");
-    empty.innerHTML = `<strong>ERROR. Please provide an input amount</strong>`;
+    empty.innerHTML = `<strong>ERROR. Please provide an input amount.</strong>`;
     const results = document.getElementById("results");
     results.innerHTML = "";
     results.removeAttribute("class");
