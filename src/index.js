@@ -12,7 +12,7 @@ async function handleFormSubmission(e) {
   const cur2Element = document.getElementById("cur2");
   const cur2 = cur2Element.value;
   const cur2Name = cur2Element.options[cur2Element.selectedIndex].text;
-  const amt = document.getElementById("amount").value;
+  const amt = document.getElementById("amount").value.trim();
   const { result, error } = await API.convert(cur1, cur2, amt);
   if (error) {
     const detailedError = {
@@ -25,13 +25,20 @@ async function handleFormSubmission(e) {
     results.innerHTML = "";
     results.removeAttribute("class");
     results.append(errorDisplay);
-  } else {
+  } else if (typeof result.conversion_result !== 'undefined') {
     const conversion = document.createElement("p");
     conversion.innerHTML = `<strong>${amt}</strong> <em>${cur1Name}</em> is equal to <strong>${result.conversion_result}</strong> <em>${cur2Name}</em>.`;
     const results = document.getElementById("results");
     results.innerHTML = "";
     results.removeAttribute("class");
     results.append(conversion);
+  } else {
+    const empty = document.createElement("p");
+    empty.innerHTML = `<strong>ERROR. Please provide an input amount</strong>`;
+    const results = document.getElementById("results");
+    results.innerHTML = "";
+    results.removeAttribute("class");
+    results.append(empty);
   }
 }
 
