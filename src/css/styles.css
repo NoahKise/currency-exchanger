@@ -26,6 +26,7 @@ h1 {
 h2 {
   text-decoration: underline;
   font-family: money;
+  font-size: 22px;
 }
 
 #results {
@@ -52,6 +53,7 @@ select {
 
 input {
   background-color: rgb(185, 255, 247);
+  width: 100px;
 }
 
 button {
