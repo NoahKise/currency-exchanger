@@ -23,12 +23,14 @@ async function handleFormSubmission(e) {
     errorDisplay.append(detailedError.message + ". " + detailedError.errorType + ".");
     const results = document.getElementById("results");
     results.innerHTML = "";
+    results.removeAttribute("class");
     results.append(errorDisplay);
   } else {
     const conversion = document.createElement("p");
-    conversion.append(amt + " " + cur1Name + " is equal to " + result.conversion_result + " " + cur2Name + ".");
+    conversion.innerHTML = `<strong>${amt}</strong> ${cur1Name} is equal to <strong>${result.conversion_result}</strong> ${cur2Name}.`;
     const results = document.getElementById("results");
     results.innerHTML = "";
+    results.removeAttribute("class");
     results.append(conversion);
   }
 }
